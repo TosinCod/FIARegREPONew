@@ -11,6 +11,10 @@ const GOOGLE_SCRIPT_URL2 = process.env.GOOGLE_SCRIPT_URL2;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is Live!");
+});
+
 app.post(
   "https://my-backend-cxqd.onrender.com/api/register",
   async (req, res) => {

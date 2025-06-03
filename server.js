@@ -36,7 +36,7 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/becomeExpert", async (req, res) => {
   try {
     const response = await fetch(
-      "ttps://script.google.com/macros/s/AKfycbz67esJy0syCJnHCI-6oAUVnTX5YJuIUMMy2hSHl_vmf2v5iPen8AzkeJagD5SlN7BV2Q/exec",
+      "https://script.google.com/macros/s/AKfycbz67esJy0syCJnHCI-6oAUVnTX5YJuIUMMy2hSHl_vmf2v5iPen8AzkeJagD5SlN7BV2Q/exec",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

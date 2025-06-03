@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api/register", async (req, res) => {
-  res.json({ result: "received" });
+  res.json({ result: "success" });
 
   try {
     const response = await fetch(

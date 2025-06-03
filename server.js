@@ -14,7 +14,8 @@ app.use(cors());
 app.use(express.json());
 
 app.post("/api/register", async (req, res) => {
-  console.log("Incoming /api/register:", req.body);
+  res.json({ result: "received" });
+
   try {
     const response = await fetch(
       "https://script.google.com/macros/s/AKfycbzIpeG-rcoDHHXEK7ic6LfhHpKvS5cAOsdcZHeBgcruWS7pNTSPsRVvZMOISc_lFnF5_w/exec",
@@ -24,9 +25,6 @@ app.post("/api/register", async (req, res) => {
         body: JSON.stringify(req.body),
       }
     );
-
-    const data = await response.json();
-    res.json(data);
   } catch (err) {
     console.error("Google Script POST failed:", err.message);
     res.status(500).json({ result: "error", message: err.message });
@@ -34,6 +32,8 @@ app.post("/api/register", async (req, res) => {
 });
 
 app.post("/api/becomeExpert", async (req, res) => {
+  res.json({ result: "received" });
+
   try {
     const response = await fetch(
       "https://script.google.com/macros/s/AKfycbz67esJy0syCJnHCI-6oAUVnTX5YJuIUMMy2hSHl_vmf2v5iPen8AzkeJagD5SlN7BV2Q/exec",
@@ -43,9 +43,6 @@ app.post("/api/becomeExpert", async (req, res) => {
         body: JSON.stringify(req.body),
       }
     );
-
-    const data = await response.json();
-    res.json(data);
   } catch (err) {
     console.error("Error forwarding to Google Script:", err.message);
     res.status(500).json({ result: "error", message: err.message });
